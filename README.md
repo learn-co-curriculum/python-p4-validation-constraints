@@ -26,7 +26,7 @@ control the data we add to the database.
 The nullable constraint allows us to make sure the values added to the columns are not null.
 We can define this by adding the argument `nullable=False`.
 
-If its required that the values in your columns must be unique then the unique constraint can be specified by adding the argument `unique=true` to the column definition.
+If its required that the values in your columns must be unique then the unique constraint can be specified by adding the argument `unique=True` to the column definition.
 
 ***
 
@@ -37,11 +37,11 @@ The text of the check constraint is passed directly through to the database. Som
 Check Constraints.
 
 Here is an example of a Patient table that uses constraints to control input of
-birth_year and death_year. You can find the complete code in `bin/constrains.py`
+birth_year and death_year. You can find the complete code in `bin/constraints.py`
 
 ```py
 class Patient(base):
-    __tablename__ = 'patient'
+    __tablename__ = 'patients'
     name = Column(String(length=50), primary_key=True)
     birth_year = Column(Integer,
                         CheckConstraint('birth_year < 2023'),
